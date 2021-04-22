@@ -1,3 +1,4 @@
+const express = require("express");
 const router = require("express").Router();
 const db = require("../models");
 
@@ -12,13 +13,24 @@ router.get("/api/workouts", (req, res) => {
 
 
 //need to get aggregate method working with workout(addfields and sum operator)
-router.get("/api/workouts/range", ({}, res) => {
-    db.Workout.find({}).then((dbWorkout) => {
+router.get("/api/workouts/range", (req, res) => {
+    db.Workout.find({})
+    .limit(10)
+    .then((dbWorkout) => {
         res.json(dbWorkout);
-    }).catch(err => {
-        res.status(400).json(err);
+    })
+    .catch((err) => {
+        res.json(err);
     });
 });
+
+// router.get("/api/workouts/range", ({}, res) => {
+//     db.Workout.find({}).then((dbWorkout) => {
+//         res.json(dbWorkout);
+//     }).catch(err => {
+//         res.status(400).json(err);
+//     });
+// });
 
 // router.post("/api/workouts", (req, res) => {
 //     db.Workout.create().then((dbWorkout) => {
@@ -41,15 +53,8 @@ router.post("/api/workouts", (req, res) => {
         });
 });
 
-// router.put("/api/workouts/:id", (req, res) => {
-//     db.Workout.findByIdAndUpdate(
-//         { _id: req.params.id }, { exercises: req.body }
-//     ).then((dbWorkout) => {
-//         res.json(dbWorkout);
-//     }).catch(err => {
-//         res.status(400).json(err);
-//     });
-// });
+
+
 
 router.put("/api/workouts/:id", (req, res) => {
     db.Workout.findByIdAndUpdate(
