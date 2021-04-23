@@ -44,7 +44,7 @@ router.post("/api/workouts", (req, res) => {
     db.Workout.create({
         day: Date.now()
     })
-    then(newWorkout => {
+    .then(newWorkout => {
         console.log("Hello I am a new workout: ", newWorkout);
         res.json(newWorkout);
     })
