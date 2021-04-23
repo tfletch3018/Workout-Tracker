@@ -1,13 +1,11 @@
 # Workout-Tracker
 
 ## Description
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
 - The task was to create a workout tracker, given the front end code already in tact by creating a Mongo database with a Mongoose schema with routes handled by Express
 - The app allows the user to create, view and manage daily workouts. The user is able to log multiple exercises and then return to update this information if desired
 - This application gave me the opportunity to work with Mongo and gain an understanding of some of its advantages.  It is an excellent tool for managing a data structure that will evelove over time. It also provides a fully functional JavaScript environment for use wih a MongoDB.
 
 ## User Story
-
 * As a user, I want to be able to view create and track daily workouts. I want to be able to log multiple exercises in a workout on a given day. I should also be able to track the name, type, weight, sets, reps, and duration of exercise. If the exercise is a cardio exercise, I should be able to track my distance traveled.
 
 ## Business Context
@@ -31,14 +29,13 @@ The user should be able to:
 ```
 
 ## Usage
-
-<img src="images\demo.gif" />
-
 <img src="images\Screenshot2.png" />
 
 <img src="images\Screenshot3.png" />
 
 <img src="images\Screenshot1.png" />
+
+<img src="images\demo.gif" />
 
 ## License
 MIT License
